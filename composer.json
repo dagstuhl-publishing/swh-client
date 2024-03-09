@@ -1,0 +1,24 @@
+{
+  "name": "swh/client",
+  "type": "project",
+  "description": "SWH connector and client that interacts with SWH data model. Part of the FAIRCORE4EOSC project for LZI-Dagstuhl",
+  "keywords": ["software-heritage", "archive", "metadata"],
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "psy/psysh": "^0.12.0",
+    "illuminate/support": "^10.47",
+    "illuminate/validation": "^10.43",
+    "guzzlehttp/guzzle": "^7.8",
+    "php-ds/php-ds": "^1.5",
+    "illuminate/http": "^10.47",
+    "illuminate/log": "^10.47"
+  },
+  "autoload": {
+    "psr-4": {
+      "Module\\": "Module"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
