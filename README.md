@@ -1,6 +1,6 @@
 ## LZI - SWH API Client (Documentation)
 
-LZI has developed this API client and connector as part of the FAIR4CoreEOSC project to address the project's four pillars (Archive, Reference, Describe and Cite). The API is integrated to a Laravel-framework app and is wrapped round the [`HTTP Facade`](https://laravel.com/api/9.x/Illuminate/Support/Facades/Http.html) as well as [`GuzzleHTTP`](https://docs.guzzlephp.org/en/stable/index.html) library. 
+LZI has developed this API client and connector as part of the FAIR4CoreEOSC project to address the project's four pillars (Archive, Reference, Describe and Cite). The API is integrated to a Laravel-framework app and is wrapped round the [`Illuminate Http package`](https://packagist.org/packages/illuminate/http) and the [`GuzzleHTTP`](https://docs.guzzlephp.org/en/stable/index.html) library.
 The functionality and use-cases are based upon the Software Heritage workflow provided as the server-side of communications.
 
 
@@ -25,14 +25,14 @@ The functionality and use-cases are based upon the Software Heritage workflow pr
 Initialise a new API session to explore each API class and its `public` methods:
 
 ```php
-$ php artisan tinker
+$ psysh 
 Psy Shell v0.11.22 (PHP 8.2.0 — cli) by Justin Hileman
 ```
 
 This will open a REPL console-based session where one can test the functionality of the api classes and their methods before building a suitable workflow/use-cases.
 
   > [!Note]
-  > [`Laravel Tinker`](https://github.com/laravel/tinker) should have been installed via `composer.json` as already described in [installation steps](https://github.com/dagstuhl-publishing/beta-faircore4eosc#installation-steps).
+  > [`PsySH`](https://psysh.org/) should have been installed via `composer.json`.
 
 
 ## API Connections Classes 
@@ -44,7 +44,7 @@ The following settings are related to the base connection classes:
     * `HTTPClient`: Initialises a [`PendingRequest`](https://laravel.com/api/9.x/Illuminate/Http/Client/PendingRequest.html) instance with essential configurations for outgoing calls and defines the expected SWH endpoints.
     * `SyncHTTP`: Invokes synchronous HTTP calls and can receive multiple modifiable configurations.
 
-      > Asynchronous calls can be handled with [`Laravel Queues`](https://laravel.com/docs/10.x/queues). At the time of writing, SWH does not support such a pattern on the server-side.
+      > Asynchronous calls: At the time of writing, SWH does not support such a pattern on the server-side.
 
 - #### Default Configurations
 
