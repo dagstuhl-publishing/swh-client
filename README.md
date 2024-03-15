@@ -1,4 +1,4 @@
-## LZI - SWH API Client (Documentation)
+## Beta: LZI - SWH API Client (Documentation)
 
 LZI has developed this API client and connector as part of the FAIR4CoreEOSC project to address the project's four pillars (Archive, Reference, Describe and Cite). The API is integrated to a Laravel-framework app and is wrapped round the [`Illuminate Http package`](https://packagist.org/packages/illuminate/http) and the [`GuzzleHTTP`](https://docs.guzzlephp.org/en/stable/index.html) library.
 The functionality and use-cases are based upon the Software Heritage workflow provided as the server-side of communications.
