@@ -9,8 +9,8 @@
 namespace Module\Repositories;
 
 use GuzzleHttp\Exception\TooManyRedirectsException;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use Module\Globals\HTTP;
 use Module\HTTPConnector\HTTPClient;
 use ReflectionException;
 
@@ -59,7 +59,7 @@ final class GitLab extends Git
         try{
             $pendingURL = sprintf('%s://%s%s', $this->decomposedURL['scheme'], $this->decomposedURL['host'], "/help");
 
-            $headResponse = Http::withOptions(['allow_redirects' => ['max' => 1]])->HEAD($pendingURL);
+            $headResponse = HTTP::withOptions(['allow_redirects' => ['max' => 1]])->HEAD($pendingURL);
 
             return  array_key_exists('X-Gitlab-Meta', $headResponse->headers())
                 || str_contains($headResponse->header("Set-Cookie"), "_gitlab_session")

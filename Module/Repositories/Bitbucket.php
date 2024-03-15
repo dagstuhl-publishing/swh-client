@@ -61,13 +61,13 @@ final class Bitbucket extends Repository
 
         parent::splitByBreakpoint('/'.$bitBucketBreakPoint.'/');
 
-        return parent::$repositoryPath;
+        return $this->repositoryPath;
 
     }
 
     protected function setBaseRepositoryURL(): string
     {
-        return sprintf('%s://%s%s', $this->decomposedURL['scheme'], $this->decomposedURL['host'], parent::$repositoryBase);
+        return sprintf('%s://%s%s', $this->decomposedURL['scheme'], $this->decomposedURL['host'], $this->repositoryBase);
     }
 
 }

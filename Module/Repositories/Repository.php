@@ -35,12 +35,11 @@ abstract class Repository
     private const SVNTYPE = 'svn';
 
     public string $url = '';
-
     public ?string $visitType = NULL;
     public array $decomposedURL = [];
     public array $nodeHits = [];
-    protected static string $repositoryBase;
-    protected static string $repositoryPath;
+    protected string $repositoryBase;
+    protected string $repositoryPath;
 
 
 
@@ -109,15 +108,15 @@ abstract class Repository
 
     private function setInitialRepositoryBase(): void
     {
-        self::$repositoryBase = $this->decomposedURL["path"];
+        $this->repositoryBase = $this->decomposedURL["path"];
     }
 
     protected function splitByBreakpoint(string $breakpoint): void
     {
         $pathArray = explode($breakpoint, $this->decomposedURL["path"]);
 
-        self::$repositoryBase = $pathArray[0];
-        self::$repositoryPath = $pathArray[1];
+        $this->repositoryBase = $pathArray[0];
+        $this->repositoryPath = $pathArray[1];
     }
 
     protected function setPaths(?string $urlPaths): void
